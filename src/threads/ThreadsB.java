@@ -38,12 +38,12 @@ class TestThread {
             ThreadsB b = new ThreadsB(1);
             ThreadsB.creatArray();
             
-            Thread t1 = new Thread(a, "Thread 1");
-            Thread t2 = new Thread(b, "Thread 2");
-            t1.start();
-            t1.join();
-            t2.start();
-            t2.join();
+            Thread t1 = new Thread(a, "Thread 1");             //creating Thread 1
+            Thread t2 = new Thread(b, "Thread 2");             //creating Thread 2
+            t1.start();                                        //Starting Thread 1
+            t1.join();                                         //asking main thread to wait until Thread 1 finishes it's work
+            t2.start();                                        //starting Thread 2(Runnable state)
+            t2.join();                                         //asking main thread to wait until Thread 2 finishes it's work
             System.out.println("sum " + a.sum);
         } catch (InterruptedException ex) {
             Logger.getLogger(TestThread.class.getName()).log(Level.SEVERE, null, ex);
