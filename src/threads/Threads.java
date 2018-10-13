@@ -21,7 +21,7 @@ public class Threads extends Thread {
         }
     }
 
-    public synchronized void run() {                       //synchronized is not necesssary
+    public synchronized void run() {                       
         int i, low, high = 0;
         low = myid * wsize;
         high = low + wsize;
